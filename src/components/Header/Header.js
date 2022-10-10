@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import Hero from "../Hero/Hero";
 import MenuBar from "../MenuBar/MenuBar";
 import Navbar from "../Navbar/Navbar";
 
@@ -9,6 +10,7 @@ const Header = () => {
   const handleToggle = (open) => {
     setOpen(!open);
   };
+
   const routes = [
     { id: 1, name: "ABOUT", path: "/about" },
     { id: 2, name: "ACADEMICS", path: "/academics" },
@@ -24,6 +26,7 @@ const Header = () => {
         <Navbar open={open} handleToggle={handleToggle}></Navbar>
         <MenuBar open={open} handleToggle={handleToggle}></MenuBar>
       </RouteContext.Provider>
+      <Hero></Hero>
     </div>
   );
 };
